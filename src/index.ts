@@ -14,7 +14,7 @@ function json(data, status = 200, origin = "") {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request: Request, env: { GROQ_API_KEY: string }) {
     const url = new URL(request.url);
     const origin = request.headers.get("Origin") || "";
 
